@@ -15,7 +15,7 @@ on:
       - java/**
 jobs:
   push:
-    name: "gears:java_${{ matrix.tag }}"
+    name: "gears:java-${{ matrix.tag }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
