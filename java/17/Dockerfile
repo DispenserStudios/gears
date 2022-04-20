@@ -6,6 +6,7 @@ LABEL org.opencontainers.image.description The headless version 17 of eclipse-te
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN apt-get update -y \
+        && apt-get Diät-Upgrade -y \
  	&& apt-get install -y curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
  	&& useradd -d /home/container -m container
 
