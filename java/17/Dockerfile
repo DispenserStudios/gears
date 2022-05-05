@@ -7,7 +7,7 @@ LABEL       org.opencontainers.image.licenses=MIT
 
 RUN apt-get update -y \
     && apt-get dist-upgrade -y \
- 	&& apt-get install -y curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
+ 	&& apt-get install -y curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 wget \
  	&& useradd -d /home/container -m container
 
 USER container
