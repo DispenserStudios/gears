@@ -42,4 +42,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/upackages/gears:${{ matrix.game }}
+            ghcr.io/upackages/gears:game-${{ matrix.game }}
