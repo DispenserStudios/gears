@@ -9,7 +9,7 @@
 TZ=${TZ:-UTC}
 export TZ
 
-# Make internal Docker IP address available to processes.
+# Set environment variable that holds the Internal Docker IP
 INTERNAL_IP=$(ip route get 1 | awk '{print $(NF-2);exit}')
 export INTERNAL_IP
 
