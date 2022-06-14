@@ -17,7 +17,7 @@ on:
 
 jobs:
   push:
-    name: "games:${{ matrix.game }}"
+    name: "gears:${{ matrix.game }}"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
