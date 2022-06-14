@@ -1,8 +1,13 @@
+# Copyright (c) 2022 Unately
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
 FROM python:3.10-bullseye
 
 LABEL maintainer="hello@unately.com"
 LABEL org.opencontainers.image.source https://github.com/upackages/gears
-LABEL org.opencontainers.image.description Python 3.10 Docker build by Unately for Pterodactyl.
+LABEL org.opencontainers.image.description "Python 3.10 Docker build by Unately for Pterodactyl."
 LABEL org.opencontainers.image.licenses=MIT
 
 RUN apt-get update -y \

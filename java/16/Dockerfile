@@ -3,11 +3,11 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-FROM  --platform=$TARGETOS/$TARGETARCH openjdk:11.0.13-slim
+FROM  --platform=$TARGETOS/$TARGETARCH openjdk:17-slim
 
 LABEL maintainer="hello@unately.com"
 LABEL org.opencontainers.image.source https://github.com/upackages/gears
-LABEL org.opencontainers.image.description "The headless version 17 of eclipse-temurin."
+LABEL org.opencontainers.image.description "The headless version 16 of eclipse-temurin."
 LABEL org.opencontainers.image.licenses=MIT
 
 RUN apt-get update -y \

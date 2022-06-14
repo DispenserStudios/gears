@@ -1,10 +1,11 @@
 #!/bin/bash
 #
-# Copyright (c) 2022 Joshua Schmitt
+# Copyright (c) 2022 Unately
 #
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
+# Default the TZ environment variable to UTC.
 TZ=${TZ:-UTC}
 export TZ
 
@@ -16,7 +17,7 @@ export INTERNAL_IP
 cd /home/container || exit 1
 
 # Print Java version
-printf "\033[1m\033[33mgears@unately~ \033[0mjava -version\n"
+printf "\033[1m\033[33mequestrian@realms~ \033[0mjava -version\n"
 java -version
 
 # Convert all of the "{{VARIABLE}}" parts of the command into the expected shell
@@ -26,6 +27,6 @@ PARSED=$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g' | eval echo "$(cat
 
 # Display the command we're running in the output, and then execute it with the env
 # from the container itself.
-printf "\033[1m\033[33mgears@unately~ \033[0m%s\n" "$PARSED"
+printf "\033[1m\033[33mequestrian@realms~ \033[0m%s\n" "$PARSED"
 # shellcheck disable=SC2086
 exec env ${PARSED}

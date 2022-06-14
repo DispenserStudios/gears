@@ -5,6 +5,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
+# Default the TZ environment variable to UTC.
 TZ=${TZ:-UTC}
 export TZ
 
@@ -14,10 +15,6 @@ export INTERNAL_IP
 
 # Switch to the container's working directory
 cd /home/container || exit 1
-
-# Print Python version
-printf "\033[1m\033[33mequestrian@realms~ \033[0mpython --version\n"
-python --version
 
 # Convert all of the "{{VARIABLE}}" parts of the command into the expected shell
 # variable format of "${VARIABLE}" before evaluating the string and automatically
