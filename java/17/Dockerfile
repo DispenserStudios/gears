@@ -3,7 +3,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-FROM  --platform=$TARGETOS/$TARGETARCH openjdk:11.0.13-slim
+FROM  --platform=$TARGETOS/$TARGETARCH ghcr.io/upackages/java:17
 
 LABEL maintainer="hello@unately.com"
 LABEL org.opencontainers.image.source https://github.com/upackages/gears
