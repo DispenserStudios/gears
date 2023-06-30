@@ -3,7 +3,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-FROM --platform=$TARGETOS/$TARGETARCH node:17-alpine
+FROM --platform=$TARGETOS/$TARGETARCH node:20-alpine
 
 LABEL maintainer="hello@unately.com"
 LABEL org.opencontainers.image.source https://github.com/upackages/gears

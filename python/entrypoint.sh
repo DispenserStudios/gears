@@ -16,16 +16,16 @@ export INTERNAL_IP
 cd /home/container || exit 1
 
 # Print Python version
-printf "\033[1m\033[33mequestrian@realms~ \033[0mpython --version\n"
+printf "\033[1m\033[33maide@realms~ \033[0mpython --version\n"
 python --version
 
 # Convert all of the "{{VARIABLE}}" parts of the command into the expected shell
 # variable format of "${VARIABLE}" before evaluating the string and automatically
 # replacing the values.
-MODIFIED_STARTUP=$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g' | eval echo "$(cat -)")
+PARSED=$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g' | eval echo "$(cat -)")
 
 # Display the command we're running in the output, and then execute it with the env
 # from the container itself.
-printf "\033[1m\033[33mequestrian@realms~ \033[0m%s\n" "$MODIFIED_STARTUP"
+printf "\033[1m\033[33maide@realms~ \033[0m%s\n" "$PARSED"
 # shellcheck disable=SC2086
-exec env ${MODIFIED_STARTUP}
+exec env ${PARSED}

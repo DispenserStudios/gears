@@ -3,21 +3,19 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-FROM python:3.10-bullseye
+FROM --platform=$TARGETOS/$TARGETARCH python:3.10-alpine
 
 LABEL maintainer="hello@unately.com"
 LABEL org.opencontainers.image.source https://github.com/upackages/gears
 LABEL org.opencontainers.image.description "Python 3.10 Docker build by Unately for Pterodactyl."
 LABEL org.opencontainers.image.licenses=MIT
 
-RUN apt-get update -y \
-    && apt-get dist-upgrade -y \
-    && apt-get install -y curl ca-certificates cmake make ca-certificates curl ffmpeg g++ gcc git openssl sqlite3 tar tzdata \
-    && useradd -d /home/container -m container
+RUN apk add --update --no-cache cmake make ca-certificates curl ffmpeg g++ gcc git openssl sqlite tar tzdata \
+	&& adduser -D -h /home/container container
 
 USER container
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
 COPY ./../entrypoint.sh /entrypoint.sh
-CMD [ "/bin/bash", "/entrypoint.sh" ]
+CMD [ "/bin/ash", "/entrypoint.sh" ]

@@ -3,7 +3,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-FROM --platform=$TARGETOS/$TARGETARCH ghcr.io/upackages/gears:ubuntu
+FROM --platform=$TARGETOS/$TARGETARCH ghcr.io/upackages/gears:debian
 
 LABEL maintainer="hello@unately.com"
 LABEL org.opencontainers.image.source https://github.com/upackages/gears
