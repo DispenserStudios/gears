@@ -3,7 +3,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-name: build base
+name: build installers
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ on:
     branches:
       - master
     paths:
-      - base/**
+      - installers/**
 
 jobs:
   push:
