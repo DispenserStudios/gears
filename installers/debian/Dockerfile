@@ -7,7 +7,7 @@ FROM --platform=$TARGETOS/$TARGETARCH debian:bullseye-slim
 
 LABEL maintainer="hello@unately.com"
 LABEL org.opencontainers.image.source https://github.com/upackages/gears
-LABEL org.opencontainers.image.description "The installer image based on Alpine Linux"
+LABEL org.opencontainers.image.description "The installer image based on Debian"
 LABEL org.opencontainers.image.licenses=MIT
 
 
